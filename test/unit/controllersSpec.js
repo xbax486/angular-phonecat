@@ -65,6 +65,10 @@ describe('PhoneCat controllers', function() {
     it('should fetch phone detail', function() {
       expect(scope.phone).toEqualData({});
       $httpBackend.flush();
+      
+      //test the setImage function
+      scope.setImage('image/url1.png');
+      expect(scope.mainImageUrl).toEqualData('image/url1.png');
 
       expect(scope.phone).toEqualData(xyzPhoneData());
     });
